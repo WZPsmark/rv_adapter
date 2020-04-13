@@ -1,10 +1,14 @@
 package com.smark.skadapterdemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import com.sk.rvadapter.adapter.SkAdapter;
+import com.sk.rvadapter.holder.SViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, mStringList, R.layout.item);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         mRecyclerView.setAdapter(adapter);
+
+
+//        mRecyclerView.setAdapter(new SkAdapter(this, mStringList, R.layout.item) {
+//            @Override
+//            public void convert(SViewHolder holder, Object data) {
+//
+//            }
+//        });
     }
 
 

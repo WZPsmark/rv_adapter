@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -36,14 +35,4 @@ dependencies {
     implementation project(":sk_rvadapter")
 }
 
-publish {
-    userOrg = 'smarkorg' //bintray账户下某个组织id
-    groupId = 'com.sk.rvadapter' //maven仓库下库的包名，一般为模块包名
-    artifactId = 'sk_rvadapter' //项目名称
-    publishVersion = '1.0.1' //版本号
-    desc = 'A convenient and practical RecycleView encapsulates the adapter' //项目介绍
-    website = '' //项目主页
-    licences = ['Apache-2.0']
-
-}
 

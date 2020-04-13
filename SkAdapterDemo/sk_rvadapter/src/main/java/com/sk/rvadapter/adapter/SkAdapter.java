@@ -16,8 +16,7 @@ import java.util.List;
 
 /**
  * Created by smark on 2020/4/13.
- * 邮箱：smarkwzp@163.com
- * 拓展通用recycleView适配器
+ * smarkwzp@163.com
  */
 public abstract class SkAdapter<T> extends RecyclerView.Adapter<SViewHolder> {
     protected Context mContext;
