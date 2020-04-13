@@ -1,0 +1,3 @@
+rootProject.name='SkAdapterDemo'
+include ':app'
+include ':sk_rvadapter'

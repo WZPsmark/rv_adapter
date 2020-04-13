@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.smark.skadapterdemo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation project(":sk_rvadapter")
+}
+
+publish {
+    userOrg = 'smarkorg' //bintray账户下某个组织id
+    groupId = 'com.sk.rvadapter' //maven仓库下库的包名，一般为模块包名
+    artifactId = 'sk_rvadapter' //项目名称
+    publishVersion = '1.0.1' //版本号
+    desc = 'A convenient and practical RecycleView encapsulates the adapter' //项目介绍
+    website = '' //项目主页
+    licences = ['Apache-2.0']
+
+}
+
